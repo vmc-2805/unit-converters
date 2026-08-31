@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { convert, convertNumberBase, formatNumber } from '../lib/convert.js';
 
@@ -7,6 +7,57 @@ function indexOfUnit(category, name, fallback) {
   const wanted = name.toLowerCase();
   const found = category.units.findIndex((unit) => unit.name.toLowerCase() === wanted);
   return found === -1 ? fallback : found;
+}
+
+function CustomSelect({ id, value, onChange, options }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const selectedOption = options.find((opt) => opt.value === value) || options[0];
+
+  return (
+    <div className="custom-select-container" ref={containerRef}>
+      <button
+        id={id}
+        type="button"
+        className={`custom-select-trigger${isOpen ? ' is-open' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+      >
+        <span>{selectedOption?.label}</span>
+        <span className="custom-select-arrow"></span>
+      </button>
+      {isOpen && (
+        <ul className="custom-select-options" role="listbox">
+          {options.map((opt) => (
+            <li
+              key={opt.value}
+              role="option"
+              aria-selected={opt.value === value}
+              className={`custom-select-option${opt.value === value ? ' is-selected' : ''}`}
+              onClick={() => {
+                onChange(opt.value);
+                setIsOpen(false);
+              }}
+            >
+              {opt.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 }
 
 export default function ConverterTool({ category }) {
@@ -39,6 +90,36 @@ export default function ConverterTool({ category }) {
     );
   }
 
+  const fromOptions = useMemo(() => {
+    return category.units.map((unit, index) => ({
+      value: index,
+      label: unit.label,
+    }));
+  }, [category.units]);
+
+  const toOptions = useMemo(() => {
+    return category.units.map((unit, index) => {
+      let display = unit.label;
+      if (value.trim() !== '') {
+        if (isNumbers) {
+          const converted = convertNumberBase(value, fromUnit, unit);
+          if (converted && converted !== 'invalid digits') {
+            display = `${display} (${converted})`;
+          }
+        } else {
+          const numeric = Number(value);
+          if (!Number.isNaN(numeric)) {
+            display = `${display} (${formatNumber(convert(category, numeric, fromUnit, unit))})`;
+          }
+        }
+      }
+      return {
+        value: index,
+        label: display,
+      };
+    });
+  }, [category.units, value, isNumbers, fromUnit, category]);
+
   return (
     <div className="panel">
       <h2 className="panel-title">{category.name} Converter</h2>
@@ -59,17 +140,12 @@ export default function ConverterTool({ category }) {
           </div>
           <div className="field">
             <label htmlFor="from-unit">Unit</label>
-            <select
+            <CustomSelect
               id="from-unit"
               value={fromIndex}
-              onChange={(event) => setUnits(Number(event.target.value), toIndex)}
-            >
-              {category.units.map((unit, index) => (
-                <option key={`from-${unit.name}-${index}`} value={index}>
-                  {unit.label}
-                </option>
-              ))}
-            </select>
+              onChange={(nextFrom) => setUnits(nextFrom, toIndex)}
+              options={fromOptions}
+            />
           </div>
         </div>
 
@@ -84,17 +160,12 @@ export default function ConverterTool({ category }) {
           </div>
           <div className="field">
             <label htmlFor="to-unit">Unit</label>
-            <select
+            <CustomSelect
               id="to-unit"
               value={toIndex}
-              onChange={(event) => setUnits(fromIndex, Number(event.target.value))}
-            >
-              {category.units.map((unit, index) => (
-                <option key={`to-${unit.name}-${index}`} value={index}>
-                  {unit.label}
-                </option>
-              ))}
-            </select>
+              onChange={(nextTo) => setUnits(fromIndex, nextTo)}
+              options={toOptions}
+            />
           </div>
         </div>
       </div>

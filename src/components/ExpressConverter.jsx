@@ -137,11 +137,18 @@ function QuickConvert() {
               aria-label="Convert to unit"
               onChange={(event) => choose('to', event.target.value)}
             >
-              {units.map((unit) => (
-                <option key={unit.name} value={unit.name}>
-                  {titled(unit.name)}
-                </option>
-              ))}
+              {units.map((unit) => {
+                const numeric = Number(value);
+                const showVal = value.trim() !== '' && !Number.isNaN(numeric);
+                const display = showVal
+                  ? `${titled(unit.name)} (${formatNumber(convert(category, numeric, fromUnit, unit))})`
+                  : titled(unit.name);
+                return (
+                  <option key={unit.name} value={unit.name}>
+                    {display}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
