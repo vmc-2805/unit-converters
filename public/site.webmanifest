@@ -1,0 +1,12 @@
+{
+  "name": "All In One Calculator",
+  "short_name": "Unit Converter",
+  "description": "Free online unit converter for length, weight, temperature, volume and many more units.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f8f5",
+  "theme_color": "#114a38",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

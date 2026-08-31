@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#114a38"/>
+  <rect x="0" y="596" width="1200" height="34" fill="#1d7a4f"/>
+  <rect x="72" y="86" width="96" height="96" rx="18" fill="#f2eee2"/>
+  <text x="120" y="152" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="bold" fill="#114a38" text-anchor="middle">AC</text>
+  <text x="72" y="300" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#ffffff">All In One Calculator</text>
+  <text x="72" y="372" font-family="Arial, Helvetica, sans-serif" font-size="40" fill="#cfe1d6">Free online unit converter</text>
+  <text x="72" y="470" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#a9ccb9">78 converters  .  1600+ units  .  9 categories</text>
+</svg>

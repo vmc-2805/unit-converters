@@ -1,0 +1,6 @@
+node_modules
+dist
+.ssrtmp
+*.local
+.DS_Store
+.prerender

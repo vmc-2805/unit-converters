@@ -1,0 +1,337 @@
+/* Magnetism, radiology and the remaining converters. */
+
+export const magnetomotiveForce = {
+  id: 'magnetomotive-force', name: 'Magnetomotive Force', base: 'ampere-turn [At]',
+  units: [
+    ['ampere-turn', 'At', 1],
+    ['kiloampere-turn', 'kAt', 1000],
+    ['milliampere-turn', 'mAt', 0.001],
+    ['abampere-turn', 'abAt', 10],
+    ['gilbert', 'Gb', 0.7957747151],
+  ],
+};
+
+export const magneticFieldStrength = {
+  id: 'magnetic-field-strength', name: 'Magnetic Field Strength', base: 'ampere/meter [A/m]',
+  units: [
+    ['ampere/meter', 'A/m', 1],
+    ['ampere turn/meter', 'At/m', 1],
+    ['kiloampere/meter', 'kA/m', 1000],
+    ['oersted', 'Oe', 79.5774715482],
+  ],
+};
+
+export const magneticFlux = {
+  id: 'magnetic-flux', name: 'Magnetic Flux', base: 'weber [Wb]',
+  units: [
+    ['weber', 'Wb', 1],
+    ['milliweber', 'mWb', 0.001],
+    ['microweber', 'µWb', 1e-6],
+    ['volt second', 'V*s', 1],
+    ['unit pole', '', 1.256637e-7],
+    ['megaline', '', 0.01],
+    ['kiloline', '', 1e-5],
+    ['line', '', 1e-8],
+    ['maxwell', 'Mx', 1e-8],
+    ['tesla square meter', 'T*m^2', 1],
+    ['tesla square centimeter', 'T*cm^2', 0.0001],
+    ['gauss square centimeter', 'G*cm^2', 1e-8],
+    ['magnetic flux quantum', '', 2.06783461e-15],
+  ],
+};
+
+export const magneticFluxDensity = {
+  id: 'magnetic-flux-density', name: 'Magnetic Flux Density', base: 'tesla [T]',
+  units: [
+    ['tesla', 'T', 1],
+    ['weber/square meter', 'Wb/m^2', 1],
+    ['weber/square centimeter', 'Wb/cm^2', 10000],
+    ['weber/square inch', 'Wb/in^2', 1550.0031000062],
+    ['maxwell/square meter', 'Mx/m^2', 1e-8],
+    ['maxwell/square centimeter', 'Mx/cm^2', 0.0001],
+    ['maxwell/square inch', 'Mx/in^2', 1.55000310001e-5],
+    ['gauss', 'G', 0.0001],
+    ['line/square centimeter', '', 0.0001],
+    ['line/square inch', '', 1.55000310001e-5],
+    ['gamma', '', 1e-9],
+  ],
+};
+
+export const magnetismGroup = {
+  id: 'magnetism',
+  name: 'Magnetism Converters',
+  blurb: 'Magnetic field, flux and density units.',
+  items: [magnetomotiveForce, magneticFieldStrength, magneticFlux, magneticFluxDensity],
+};
+
+export const radiation = {
+  id: 'radiation', name: 'Radiation', base: 'gray/second [Gy/s]',
+  units: [
+    ['gray/second', 'Gy/s', 1],
+    ['exagray/second', 'EGy/s', 1e18],
+    ['petagray/second', 'PGy/s', 1e15],
+    ['teragray/second', 'TGy/s', 1e12],
+    ['gigagray/second', 'GGy/s', 1e9],
+    ['megagray/second', 'MGy/s', 1e6],
+    ['kilogray/second', 'kGy/s', 1000],
+    ['hectogray/second', 'hGy/s', 100],
+    ['dekagray/second', 'daGy/s', 10],
+    ['decigray/second', 'dGy/s', 0.1],
+    ['centigray/second', 'cGy/s', 0.01],
+    ['milligray/second', 'mGy/s', 0.001],
+    ['microgray/second', 'µGy/s', 1e-6],
+    ['nanogray/second', 'nGy/s', 1e-9],
+    ['picogray/second', 'pGy/s', 1e-12],
+    ['femtogray/second', 'fGy/s', 1e-15],
+    ['attogray/second', 'aGy/s', 1e-18],
+    ['rad/second', 'rad/s', 0.01],
+    ['joule/kilogram/second', '', 1],
+    ['watt/kilogram', 'W/kg', 1],
+    ['sievert/second', 'Sv/s', 1],
+    ['millisievert/second', 'mSv/s', 0.001],
+    ['microsievert/second', 'µSv/s', 1e-6],
+    ['rem/second', 'rem/s', 0.01],
+    ['millirem/second', 'mrem/s', 1e-5],
+  ],
+};
+
+export const radiationActivity = {
+  id: 'radiation-activity', name: 'Radiation - Activity', base: 'becquerel [Bq]',
+  units: [
+    ['becquerel', 'Bq', 1],
+    ['terabecquerel', 'TBq', 1e12],
+    ['gigabecquerel', 'GBq', 1e9],
+    ['megabecquerel', 'MBq', 1e6],
+    ['kilobecquerel', 'kBq', 1000],
+    ['millibecquerel', 'mBq', 0.001],
+    ['curie', 'Ci', 3.7e10],
+    ['kilocurie', 'kCi', 3.7e13],
+    ['millicurie', 'mCi', 3.7e7],
+    ['microcurie', 'µCi', 37000],
+    ['nanocurie', 'nCi', 37],
+    ['picocurie', 'pCi', 0.037],
+    ['rutherford', 'Rd', 1e6],
+    ['one/second', '1/s', 1],
+    ['disintegrations/second', '', 1],
+    ['disintegrations/minute', '', 0.0166666667],
+  ],
+};
+
+export const radiationExposure = {
+  id: 'radiation-exposure', name: 'Radiation - Exposure', base: 'coulomb/kilogram [C/kg]',
+  units: [
+    ['coulomb/kilogram', 'C/kg', 1],
+    ['millicoulomb/kilogram', 'mC/kg', 0.001],
+    ['microcoulomb/kilogram', 'µC/kg', 1e-6],
+    ['rontgen', 'R', 0.000258],
+    ['tissue roentgen', '', 0.000258],
+    ['parker', '', 0.000258],
+    ['rep', '', 0.000258],
+  ],
+};
+
+export const radiationAbsorbedDose = {
+  id: 'radiation-absorbed-dose', name: 'Radiation - Absorbed Dose', base: 'gray [Gy]',
+  units: [
+    ['gray', 'Gy', 1],
+    ['kilogray', 'kGy', 1000],
+    ['milligray', 'mGy', 0.001],
+    ['centigray', 'cGy', 0.01],
+    ['microgray', 'µGy', 1e-6],
+    ['rad', 'rad', 0.01],
+    ['millirad', 'mrad', 1e-5],
+    ['joule/kilogram', 'J/kg', 1],
+    ['joule/gram', 'J/g', 1000],
+    ['joule/centigram', 'J/cg', 100000],
+    ['joule/milligram', 'J/mg', 1e6],
+  ],
+};
+
+export const radiologyGroup = {
+  id: 'radiology',
+  name: 'Radiology Converters',
+  blurb: 'Dose, activity and exposure units used in radiation work.',
+  items: [radiation, radiationActivity, radiationExposure, radiationAbsorbedDose],
+};
+
+export const prefixes = {
+  id: 'prefixes', name: 'Prefixes', base: 'none',
+  units: [
+    ['yotta', 'Y', 1e24],
+    ['zetta', 'Z', 1e21],
+    ['exa', 'E', 1e18],
+    ['peta', 'P', 1e15],
+    ['tera', 'T', 1e12],
+    ['giga', 'G', 1e9],
+    ['mega', 'M', 1e6],
+    ['kilo', 'k', 1000],
+    ['hecto', 'h', 100],
+    ['deka', 'da', 10],
+    ['none', '', 1],
+    ['deci', 'd', 0.1],
+    ['centi', 'c', 0.01],
+    ['milli', 'm', 0.001],
+    ['micro', 'µ', 1e-6],
+    ['nano', 'n', 1e-9],
+    ['pico', 'p', 1e-12],
+    ['femto', 'f', 1e-15],
+    ['atto', 'a', 1e-18],
+    ['zepto', 'z', 1e-21],
+    ['yocto', 'y', 1e-24],
+  ],
+};
+
+export const dataTransfer = {
+  id: 'data-transfer', name: 'Data Transfer', base: 'bit/second [b/s]',
+  units: [
+    ['bit/second', 'b/s', 1],
+    ['byte/second', 'B/s', 8],
+    ['kilobit/second (SI def.)', '', 1000],
+    ['kilobyte/second (SI def.)', '', 8000],
+    ['kilobit/second', 'kb/s', 1024],
+    ['kilobyte/second', 'kB/s', 8192],
+    ['megabit/second (SI def.)', '', 1e6],
+    ['megabyte/second (SI def.)', '', 8e6],
+    ['megabit/second', 'Mb/s', 1048576],
+    ['megabyte/second', 'MB/s', 8388608],
+    ['gigabit/second (SI def.)', '', 1e9],
+    ['gigabyte/second (SI def.)', '', 8e9],
+    ['gigabit/second', 'Gb/s', 1073741824],
+    ['gigabyte/second', 'GB/s', 8589934592],
+    ['terabit/second (SI def.)', '', 1e12],
+    ['terabyte/second (SI def.)', '', 8e12],
+    ['terabit/second', 'Tb/s', 1099511627776],
+    ['terabyte/second', 'TB/s', 8796093022208],
+    ['ethernet', '', 10000000],
+    ['ethernet (fast)', '', 100000000],
+    ['ethernet (gigabit)', '', 1000000000],
+    ['OC1', '', 51840000],
+    ['OC3', '', 155520000],
+    ['OC12', '', 622080000],
+    ['OC24', '', 1244160000],
+    ['OC48', '', 2488320000],
+    ['OC192', '', 9953280000],
+    ['OC768', '', 39813120000],
+    ['ISDN (single channel)', '', 64000],
+    ['ISDN (dual channel)', '', 128000],
+    ['modem (110)', '', 110],
+    ['modem (300)', '', 300],
+    ['modem (9600)', '', 9600],
+    ['modem (14.4k)', '', 14400],
+    ['modem (28.8k)', '', 28800],
+    ['modem (33.6k)', '', 33600],
+    ['modem (56k)', '', 57600],
+    ['SCSI (Async)', '', 12000000],
+    ['SCSI (Sync)', '', 40000000],
+    ['SCSI (Fast)', '', 80000000],
+    ['SCSI (Fast Ultra)', '', 160000000],
+    ['SCSI (Fast Wide)', '', 160000000],
+    ['SCSI (Fast Ultra Wide)', '', 320000000],
+    ['SCSI (Ultra-2)', '', 640000000],
+    ['SCSI (Ultra-3)', '', 1280000000],
+    ['SCSI (LVD Ultra80)', '', 640000000],
+    ['SCSI (LVD Ultra160)', '', 1280000000],
+    ['IDE (PIO mode 0)', '', 26400000],
+    ['IDE (PIO mode 1)', '', 41600000],
+    ['IDE (PIO mode 2)', '', 66400000],
+    ['IDE (PIO mode 3)', '', 88800000],
+    ['IDE (PIO mode 4)', '', 132800000],
+    ['USB', '', 96000000],
+    ['USB 2.x', '', 480000000],
+    ['USB 3.0', '', 5000000000],
+    ['USB 3.1', '', 10000000000],
+    ['FireWire (IEEE-1394)', '', 400000000],
+    ['T0 (payload)', '', 56000],
+    ['T1 (payload)', '', 1344000],
+    ['T1 (signal)', '', 1544000],
+    ['T1Z (payload)', '', 1544000],
+    ['T2 (payload)', '', 6144000],
+    ['T3 (payload)', '', 43008000],
+    ['T3 (signal)', '', 44736000],
+    ['T4 (payload)', '', 274176000],
+    ['virtual tributary 1 (signal)', '', 1728000],
+    ['virtual tributary 2 (signal)', '', 2304000],
+  ],
+};
+
+export const sound = {
+  id: 'sound', name: 'Sound', base: 'bel [B]',
+  units: [
+    ['bel', 'B', 1],
+    ['decibel', 'dB', 0.1],
+    ['neper', 'Np', 0.8685889638],
+  ],
+};
+
+export const typography = {
+  id: 'typography', name: 'Typography', base: 'point',
+  units: [
+    ['point', 'pt', 1],
+    ['pica', 'pi', 12],
+    ['twip', '', 0.05],
+    ['meter', 'm', 2834.6456692913],
+    ['centimeter', 'cm', 28.3464566929],
+    ['millimeter', 'mm', 2.8346456693],
+    ['inch', 'in', 72],
+    ['foot', 'ft', 864],
+    ['character (X)', '', 6],
+    ['character (Y)', '', 12],
+    ['pixel (X)', 'px', 0.75],
+    ['pixel (Y)', 'px', 0.75],
+    ['en', '', 6],
+    ['em', '', 12],
+  ],
+};
+
+export const volumeLumber = {
+  id: 'volume-lumber', name: 'Volume - Lumber', base: 'cubic meter [m^3]',
+  units: [
+    ['cubic meter', 'm^3', 1],
+    ['cubic centimeter', 'cm^3', 1e-6],
+    ['cubic foot', 'ft^3', 0.0283168466],
+    ['cubic inch', 'in^3', 1.6387064e-5],
+    ['board feet', '', 0.0023597372],
+    ['thousand board feet', '', 2.3597372157],
+    ['cord', '', 3.6245563638],
+    ['cord (80 cubic ft)', '', 2.2653477],
+    ['cord feet', '', 0.4530695455],
+    ['cunit', '', 2.8316846592],
+    ['pallet', '', 0.0339802159],
+    ['cross tie', '', 0.0906139091],
+    ['switch tie', '', 0.1189307256],
+    ['thousand square feet (1/8-inch panels)', '', 0.2949671488],
+    ['thousand square feet (1/4-inch panels)', '', 0.5899342976],
+    ['thousand square feet (3/8-inch panels)', '', 0.8849014464],
+    ['thousand square feet (1/2-inch panels)', '', 1.1798685952],
+    ['thousand square feet (3/4-inch panels)', '', 1.7698028928],
+  ],
+};
+
+export const volumeDry = {
+  id: 'volume-dry', name: 'Volume - Dry', base: 'cubic meter [m^3]',
+  units: [
+    ['cubic meter', 'm^3', 1],
+    ['liter', 'L', 0.001],
+    ['barrel dry (US)', '', 0.1156271],
+    ['pint dry (US)', '', 0.0005506105],
+    ['quart dry (US)', '', 0.0011012209],
+    ['peck (US)', '', 0.0088097675],
+    ['peck (UK)', '', 0.0090921],
+    ['bushel (US)', '', 0.0352390704],
+    ['bushel (UK)', '', 0.03636872],
+    ['cor (Biblical)', '', 0.22],
+    ['homer (Biblical)', '', 0.22],
+    ['ephah (Biblical)', '', 0.022],
+    ['seah (Biblical)', '', 0.0073333333],
+    ['omer (Biblical)', '', 0.0022],
+    ['cab (Biblical)', '', 0.0012222222],
+    ['log (Biblical)', '', 0.0003055556],
+  ],
+};
+
+export const otherGroup = {
+  id: 'other',
+  name: 'Other Converters',
+  blurb: 'Prefixes, data speed, typography and more.',
+  items: [prefixes, dataTransfer, sound, typography, volumeLumber, volumeDry],
+};
