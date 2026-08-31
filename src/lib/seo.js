@@ -2,7 +2,7 @@
    The same file is used by the app in the browser and by the
    pre-render script, so nothing here may touch `document` at import time. */
 
-import { allCategories, groups, findCategory, groupById, totalConverters, totalUnits } from '../data/index.js';
+import { allCategories, groups, findCategory, groupById, totalConverters, totalUnits, popularConversions } from '../data/index.js';
 
 /* Change this to your real domain before going live. */
 export const SITE_URL = 'https://www.allinonecalculator.com';
@@ -156,8 +156,7 @@ export function metaFor(path, search = '') {
       if (from && to) {
         return {
           ...base,
-          /* A unit pair is only a view of the main page, so it points there. */
-          canonical: `${SITE_URL}/convert/${category.id}`,
+          canonical: `${SITE_URL}/convert/${category.id}?from=${encodeURIComponent(from.name)}&to=${encodeURIComponent(to.name)}`,
           title: `Convert ${from.name} to ${to.name} - ${category.name} Converter`,
           description: clean(`Convert ${from.name} to ${to.name} online. Free ${category.name.toLowerCase()}
             converter with a conversion table, the formula and ${category.units.length} more units.`),
@@ -197,6 +196,31 @@ export function allRoutes() {
     ...groups.map((g) => `/category/${g.id}`),
     ...allCategories.map((c) => `/convert/${c.id}`),
   ];
+}
+
+/* Returns the full list of URLs for the sitemap, including popular unit pairs. */
+export function allSitemapRoutes() {
+  const baseRoutes = allRoutes();
+  const routesSet = new Set(baseRoutes);
+
+  // Add popular conversions
+  popularConversions.forEach((p) => {
+    routesSet.add(`/convert/${p.id}?from=${encodeURIComponent(p.from)}&to=${encodeURIComponent(p.to)}`);
+  });
+
+  // Add conversions for the first 8 units of each category
+  allCategories.forEach((category) => {
+    const units = category.units.slice(0, 8);
+    for (let i = 0; i < units.length; i++) {
+      for (let j = 0; j < units.length; j++) {
+        if (i !== j) {
+          routesSet.add(`/convert/${category.id}?from=${encodeURIComponent(units[i].name)}&to=${encodeURIComponent(units[j].name)}`);
+        }
+      }
+    }
+  });
+
+  return Array.from(routesSet);
 }
 
 /* ---- browser side ---- */

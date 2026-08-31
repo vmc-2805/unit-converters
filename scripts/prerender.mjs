@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 
-const { render, allRoutes, metaFor, SITE_URL } = await import(
+const { render, allRoutes, allSitemapRoutes, metaFor, SITE_URL } = await import(
   pathToFileURL(join(root, '.prerender', 'entry-server.js')).href
 );
 
@@ -61,14 +61,28 @@ for (const route of routes) {
 }
 
 /* Sitemap */
+const escapeXml = (text) =>
+  String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+
 const today = new Date().toISOString().slice(0, 10);
-const priority = (route) => (route === '/' ? '1.0' : route.startsWith('/convert/') ? '0.8' : '0.6');
+const sitemapRoutes = allSitemapRoutes ? allSitemapRoutes() : routes;
+const priority = (route) => {
+  if (route === '/') return '1.0';
+  if (route.includes('?')) return '0.7';
+  if (route.startsWith('/convert/')) return '0.8';
+  return '0.6';
+};
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${sitemapRoutes
   .map(
     (route) => `  <url>
-    <loc>${SITE_URL}${route === '/' ? '/' : route}</loc>
+    <loc>${SITE_URL}${escapeXml(route === '/' ? '/' : route)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${priority(route)}</priority>
@@ -82,4 +96,4 @@ await writeFile(join(dist, 'sitemap.xml'), sitemap, 'utf8');
 /* Fallback page for static hosts that need one. */
 await writeFile(join(dist, '404.html'), await readFile(join(dist, 'index.html'), 'utf8'), 'utf8');
 
-console.log(`pre-rendered ${written} pages + sitemap.xml (${routes.length} urls)`);
+console.log(`pre-rendered ${written} pages + sitemap.xml (${sitemapRoutes.length} urls)`);
