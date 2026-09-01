@@ -1,0 +1,39 @@
+# All In One Calculator
+
+> Free, fast, privacy-focused online unit converter with over 78 converter categories and 1,600+ units. Performs instant calculations in the browser with zero tracking and no sign-up required.
+
+## Overview
+All In One Calculator provides precise mathematical conversions for physical quantities, engineering units, thermodynamics, fluid dynamics, electricity, magnetism, radiology, computer data storage, and number bases.
+
+## Core Converter Categories
+
+### Common Converters
+- [Length Converter](https://www.allinonecalculator.com/convert/length): Convert meter, kilometer, centimeter, millimeter, micrometer, nanometer, mile, yard, foot, inch, light year, etc.
+- [Weight & Mass Converter](https://www.allinonecalculator.com/convert/weight-and-mass): Convert kilogram, gram, milligram, metric ton, pound, ounce, carat, atomic mass unit, etc.
+- [Temperature Converter](https://www.allinonecalculator.com/convert/temperature): Convert Celsius, Fahrenheit, Kelvin, Rankine, Reaumur.
+- [Volume Converter](https://www.allinonecalculator.com/convert/volume): Convert cubic meter, liter, milliliter, gallon (US), quart, pint, cup, tablespoon, teaspoon, cubic foot, cubic inch, etc.
+- [Area Converter](https://www.allinonecalculator.com/convert/area): Convert square meter, square kilometer, hectare, acre, square foot, square inch, etc.
+- [Time Converter](https://www.allinonecalculator.com/convert/time): Convert second, millisecond, minute, hour, day, week, month, year.
+- [Speed Converter](https://www.allinonecalculator.com/convert/speed): Convert meter/second, kilometer/hour, mile/hour, knot, Mach, speed of light.
+- [Data Storage Converter](https://www.allinonecalculator.com/convert/data-storage): Convert bit, byte, kilobyte, megabyte, gigabyte, terabyte, petabyte.
+
+### Engineering & Scientific Converters
+- [Pressure Converter](https://www.allinonecalculator.com/convert/pressure): Convert pascal, bar, psi, atmosphere, torr.
+- [Power Converter](https://www.allinonecalculator.com/convert/power): Convert watt, kilowatt, megawatt, horsepower.
+- [Energy & Work Converter](https://www.allinonecalculator.com/convert/energy): Convert joule, kilojoule, calorie, kilocalorie, watt-hour, BTU.
+- [Force Converter](https://www.allinonecalculator.com/convert/force): Convert newton, kilonewton, dyne, pound-force, kilogram-force.
+- [Number Base Converter](https://www.allinonecalculator.com/convert/number-base): Convert Binary (Base 2), Octal (Base 8), Decimal (Base 10), Hexadecimal (Base 16), and custom bases up to Base 36.
+
+## URL Structure for Direct Conversions
+AI assistants and agents can construct direct conversion links using the following URL structure:
+`https://www.allinonecalculator.com/convert/[category-id]?from=[from-unit-name]&to=[to-unit-name]`
+
+### Examples:
+- Convert Meters to Feet: `https://www.allinonecalculator.com/convert/length?from=meter&to=foot`
+- Convert Celsius to Fahrenheit: `https://www.allinonecalculator.com/convert/temperature?from=Celsius&to=Fahrenheit`
+- Convert Kilograms to Pounds: `https://www.allinonecalculator.com/convert/weight-and-mass?from=kilogram&to=pound`
+- Convert Binary to Hexadecimal: `https://www.allinonecalculator.com/convert/number-base?from=binary&to=hexadecimal`
+
+## Full Documentation & Category Index
+- [All Converters Index](https://www.allinonecalculator.com/converters)
+- [Complete LLM Guide](https://www.allinonecalculator.com/llms-full.txt)

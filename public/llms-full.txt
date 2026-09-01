@@ -1,0 +1,122 @@
+# All In One Calculator - Complete Unit Conversion Reference for LLMs
+
+> Website: https://www.allinonecalculator.com
+> Description: Comprehensive web application offering 78 unit converter categories and 1,600+ measurement units with client-side mathematical processing.
+
+## System Architecture & Conversion Math
+
+All In One Calculator processes conversions using base-unit ratio factors or dedicated conversion functions (for non-linear temperature scales and positional number systems).
+
+### Linear Unit Formula
+For linear measurement units:
+Base Value = Input Value * Unit Factor
+Output Value = Base Value / Target Unit Factor
+
+### Temperature Formulas
+- Celsius to Kelvin: K = C + 273.15
+- Fahrenheit to Kelvin: K = (F + 459.67) * (5 / 9)
+- Rankine to Kelvin: K = R * (5 / 9)
+- Reaumur to Kelvin: K = r * 1.25 + 273.15
+
+### Positional Base Conversions
+Supports integer and fractional conversions between arbitrary bases (Base 2 through Base 36) using positional power expansion and radix division.
+
+## Complete Category Index
+
+### Common Unit Converters
+1. Length (`/convert/length`) - Base unit: Meter
+2. Weight & Mass (`/convert/weight-and-mass`) - Base unit: Kilogram
+3. Volume (`/convert/volume`) - Base unit: Cubic Meter
+4. Temperature (`/convert/temperature`) - Base unit: Kelvin
+5. Area (`/convert/area`) - Base unit: Square Meter
+6. Speed (`/convert/speed`) - Base unit: Meter/second
+7. Time (`/convert/time`) - Base unit: Second
+8. Angle (`/convert/angle`) - Base unit: Radian
+9. Pressure (`/convert/pressure`) - Base unit: Pascal
+10. Power (`/convert/power`) - Base unit: Watt
+11. Energy & Work (`/convert/energy`) - Base unit: Joule
+12. Data Storage (`/convert/data-storage`) - Base unit: Bit
+13. Data Transfer Rate (`/convert/data-transfer-rate`) - Base unit: Bit/second
+14. Fuel Economy (`/convert/fuel-economy`) - Base unit: Meter/liter
+15. Number Base (`/convert/number-base`) - Base unit: Decimal
+
+### Engineering Converters
+16. Volume - Dry (`/convert/volume-dry`)
+17. Acceleration (`/convert/acceleration`)
+18. Angular Acceleration (`/convert/angular-acceleration`)
+19. Angular Velocity (`/convert/angular-velocity`)
+20. Density (`/convert/density`)
+21. Specific Volume (`/convert/specific-volume`)
+22. Moment of Inertia (`/convert/moment-of-inertia`)
+23. Moment of Force (`/convert/moment-of-force`)
+24. Torque (`/convert/torque`)
+
+### Heat & Thermodynamics Converters
+25. Fuel Efficiency - Mass (`/convert/fuel-efficiency-mass`)
+26. Fuel Efficiency - Volume (`/convert/fuel-efficiency-volume`)
+27. Temperature Interval (`/convert/temperature-interval`)
+28. Thermal Expansion (`/convert/thermal-expansion`)
+29. Thermal Resistance (`/convert/thermal-resistance`)
+30. Thermal Conductivity (`/convert/thermal-conductivity`)
+31. Specific Heat Capacity (`/convert/specific-heat-capacity`)
+32. Heat Density (`/convert/heat-density`)
+33. Heat Flux Density (`/convert/heat-flux-density`)
+34. Heat Transfer Coefficient (`/convert/heat-transfer-coefficient`)
+
+### Fluids Converters
+35. Flow (`/convert/flow`)
+36. Flow - Mass (`/convert/flow-mass`)
+37. Flow - Molar (`/convert/flow-molar`)
+38. Mass Flux Density (`/convert/mass-flux-density`)
+39. Concentration - Molar (`/convert/concentration-molar`)
+40. Concentration - Solution (`/convert/concentration-solution`)
+41. Viscosity - Dynamic (`/convert/viscosity-dynamic`)
+42. Viscosity - Kinematic (`/convert/viscosity-kinematic`)
+43. Surface Tension (`/convert/surface-tension`)
+44. Permeability (`/convert/permeability`)
+
+### Light & Optics Converters
+45. Luminance (`/convert/luminance`)
+46. Luminous Intensity (`/convert/luminous-intensity`)
+47. Illumination (`/convert/illumination`)
+48. Digital Image Resolution (`/convert/digital-image-resolution`)
+49. Frequency Wavelength (`/convert/frequency-wavelength`)
+
+### Electricity Converters
+50. Electric Charge (`/convert/electric-charge`)
+51. Linear Charge Density (`/convert/linear-charge-density`)
+52. Surface Charge Density (`/convert/surface-charge-density`)
+53. Volume Charge Density (`/convert/volume-charge-density`)
+54. Electric Current (`/convert/electric-current`)
+55. Linear Current Density (`/convert/linear-current-density`)
+56. Surface Current Density (`/convert/surface-current-density`)
+57. Electric Field Strength (`/convert/electric-field-strength`)
+58. Electric Potential (`/convert/electric-potential`)
+59. Electric Resistance (`/convert/electric-resistance`)
+60. Electric Resistivity (`/convert/electric-resistivity`)
+61. Electric Conductance (`/convert/electric-conductance`)
+62. Electric Conductivity (`/convert/electric-conductivity`)
+63. Electrostatic Capacitance (`/convert/electrostatic-capacitance`)
+64. Inductance (`/convert/inductance`)
+
+### Magnetism & Radiology Converters
+65. Magnetomotive Force (`/convert/magnetomotive-force`)
+66. Magnetic Field Strength (`/convert/magnetic-field-strength`)
+67. Magnetic Flux (`/convert/magnetic-flux`)
+68. Magnetic Flux Density (`/convert/magnetic-flux-density`)
+69. Radiation (`/convert/radiation`)
+70. Radiation - Activity (`/convert/radiation-activity`)
+71. Radiation - Exposure (`/convert/radiation-exposure`)
+72. Radiation - Absorbed Dose (`/convert/radiation-absorbed-dose`)
+
+### Other Specialized Converters
+73. Prefix (`/convert/prefix`)
+74. Typography (`/convert/typography`)
+75. Volume - Timber (`/convert/volume-timber`)
+76. Sound (`/convert/sound`)
+77. Mass Concentration (`/convert/mass-concentration`)
+78. Hardness (`/convert/hardness`)
+
+## Verification and Contact
+For questions, bug reports, or adding missing units:
+https://www.allinonecalculator.com/contact

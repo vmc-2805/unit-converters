@@ -1,4 +1,33 @@
+# robots.txt for All In One Calculator
+# https://www.allinonecalculator.com
+
 User-agent: *
 Allow: /
 
+# AI Crawlers & LLM Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap Location
 Sitemap: https://www.allinonecalculator.com/sitemap.xml
+
+# LLMs Text File Location
+# https://www.allinonecalculator.com/llms.txt
